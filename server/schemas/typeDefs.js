@@ -4,6 +4,7 @@ const typeDefs = gql`
   type User {
     username: String
     email: String
+    savedBooks: [Book]
   }
 
   type Book {
@@ -23,7 +24,7 @@ const typeDefs = gql`
   type Query {
     me: User
     user(username: String!): User
-    books(title: String): [Book]
+    savedBooks(title: String): [Book]
     book(bookId: ID!): Book
   }
 

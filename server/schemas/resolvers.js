@@ -24,7 +24,7 @@ const resolvers = {
         .select('-__v -password')
         .populate('books')
     },
-    books: async (parent, { username }) => {
+    savedBooks: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Book.find(params).sort({ createdAt: -1 });
     },
